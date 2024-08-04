@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #a3a3a3;
+    border-radius: 5px;
+}
+ 
+::-webkit-scrollbar-thumb:hover {
+    background: #737373;
+}
+
+
+.custom-checkbox {
+  background-color: transparent;
+  border: 1px solid #d1d5db; /* Tailwind's gray-300 */
+  border-radius: 0.25rem; /* Tailwind's rounded */
+  width: 1rem; /* Tailwind's w-4 */
+  height: 1rem; /* Tailwind's h-4 */
+  accent-color: #dc2626; /* Tailwind's red-600 */
+}
+
+.custom-checkbox:focus {
+  outline: 2px solid #ef4444; /* Tailwind's ring-red-500 */
+  outline-offset: 2px;
+}
+
+@layer components {
+    input[type=range] {
+      @apply appearance-none bg-transparent w-full;
+    }
+  
+    input[type=range]::-webkit-slider-runnable-track {
+      @apply  bg-black/50 rounded-full h-[4px];
+    }
+  
+    input[type=range]::-moz-range-track {
+      @apply bg-black/50 rounded-full h-[4px];
+    }
+  
+    input[type=range]::-ms-track {
+      @apply bg-black/50 rounded-full h-[4px];
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        @apply appearance-none h-5 w-5 rounded-xl bg-neutral-900 mt-[-8px]
+    }
+  
+  }
