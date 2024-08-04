@@ -1,6 +1,6 @@
-# Japanese Memory (name subject to change)
+# Japanese Tools (name subject to change)
 
-Japanese Memory is a **WIP** directory with various useful tools for learning the language.
+Japanese Tools is a **WIP** directory with various useful tools for learning the language.
 
 ## Contributing
 

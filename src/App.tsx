@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/japanesememory/kanji" element={<Kanji />} /> */}
+          {/* <Route path="/japanesetools/kanji" element={<Kanji />} /> */}
           <Route path="/conjugation/verb" element={<VerbConjugation />} />
           <Route path="/conjugation/adjectives" element={<AdjectiveConjugation/>} />
           <Route path="/particles" element={<Particles />} />
