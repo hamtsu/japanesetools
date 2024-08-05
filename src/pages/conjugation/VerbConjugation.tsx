@@ -47,7 +47,7 @@ const VerbConjugation = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
 
   const [defaultOptions, setDefaultOptions] = useState<{
-    "te-form": boolean;
+    te_form: boolean;
     "う-verbs": boolean;
     "る-verbs": boolean;
     irregular: boolean;
@@ -57,7 +57,7 @@ const VerbConjugation = () => {
     affirmative: boolean;
     plain: boolean;
   }>({
-    "te-form": true,
+    te_form: true,
     "う-verbs": true,
     "る-verbs": true,
     irregular: true,
@@ -77,7 +77,7 @@ const VerbConjugation = () => {
   function randomConjugationType(options: typeof defaultOptions) {
     const types = [];
 
-    if (options["te-form"]) {
+    if (options.te_form) {
       types.push("te_form");
     }
 
@@ -178,13 +178,13 @@ const VerbConjugation = () => {
   };
 
   useEffect(() => {
-    const options = localStorage.getItem("verb-conjugation-options");
+    let options = localStorage.getItem("verb-conjugation-options");
 
     if (!options) {
       localStorage.setItem(
         "verb-conjugation-options",
         JSON.stringify({
-          "te-form": true,
+          te_form: true,
           "う-verbs": true,
           "る-verbs": true,
           irregular: true,
@@ -195,6 +195,8 @@ const VerbConjugation = () => {
           plain: true,
         })
       );
+
+      options = localStorage.getItem("verb-conjugation-options");
     }
 
     setDefaultOptions(JSON.parse(options));
@@ -486,7 +488,7 @@ const VerbConjugation = () => {
                   </div>
                   <MultiSelect
                     items={[
-                      { name: "Te-form", defaultOn: defaultOptions["te-form"] },
+                      { name: "Te-form", defaultOn: defaultOptions.te_form },
                       { name: "Past", defaultOn: defaultOptions.past },
                       { name: "Present", defaultOn: defaultOptions.present },
                     ]}
