@@ -136,20 +136,18 @@ const VerbConjugation = () => {
 
       if (randomVerb.type === "う-verb" && options["う-verbs"]) {
         chosenVerb = randomVerb;
-      } 
+      }
       if (randomVerb.type === "る-verb" && options["る-verbs"]) {
         chosenVerb = randomVerb;
       }
       if (randomVerb.type === "irregular" && options.irregular) {
         chosenVerb = randomVerb;
       }
-
-      
     } while (!chosenVerb || chosenVerb === currentVerb);
 
     setCurrentVerb(chosenVerb);
     setCurrentConjugationType(randomType);
-    console.log(currentVerb)
+    console.log(currentVerb);
   }
 
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
@@ -227,6 +225,14 @@ const VerbConjugation = () => {
       <div className="w-full h-full pl-2 bg-slate-50 dark:bg-neutral-900">
         {/* Header */}
         <div className="flex px-2 pt-3">
+          <div className="flex flex-col">
+            <h1 className="text-4xl text-neutral-900 dark:text-slate-50">
+              <b>Verb</b> Conjugation
+            </h1>
+            <p className="bg-purple-400 text-neutral-850 text-opacity-80 px-3 leading-5 w-fit font-mono mt-1 select-none">
+              ALMOST FINISHED
+            </p>
+          </div>
           <div className="flex-grow" />
           <ThemeButton />
         </div>
@@ -397,6 +403,7 @@ const VerbConjugation = () => {
                     </p>
                   </div>
 
+                  {/* TODO finish presets */}
                   <Dropdown
                     items={[
                       {

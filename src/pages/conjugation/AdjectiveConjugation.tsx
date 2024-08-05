@@ -10,12 +10,10 @@ const AdjectiveConjugation = () => {
         {/* Header */}
         <div className="flex px-2 pt-3">
           <div className="flex flex-col">
-            <p className="text-lg text-neutral-900 dark:text-slate-50 opacity-75 dark:opacity-50">
-              <b className="underline underline-offset-4">形容詞</b> の 活用
-            </p>
             <h1 className="text-4xl text-neutral-900 dark:text-slate-50">
               <b>Adjective</b> Conjugation
             </h1>
+            <p className="bg-yellow-400 text-neutral-850 text-opacity-80 px-3 leading-5 w-fit font-mono mt-1 select-none">WORK IN PROGRESS</p>
           </div>
           <div className="flex-grow" />
           <ThemeButton />

@@ -13,6 +13,7 @@ const Particles = () => {
             <h1 className="text-4xl text-neutral-900 dark:text-slate-50">
               <b>Particle</b> Practice
             </h1>
+            <p className="bg-yellow-400 text-neutral-850 text-opacity-80 px-3 leading-5 w-fit font-mono mt-1 select-none">WORK IN PROGRESS</p>
           </div>
           <div className="flex-grow" />
           <ThemeButton />
