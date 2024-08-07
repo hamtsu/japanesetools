@@ -10,8 +10,8 @@ const Home = () => {
         {/* Header */}
         <div className="flex px-2 pt-3">
           <div className="flex flex-col">
-            <h1 className="text-5xl text-neutral-900 dark:text-slate-50">
-              <b>Home</b>
+            <h1 className="text-8xl pt-5 opacity-70 text-neutral-900 dark:text-slate-50">
+              <b>Japanese tools</b>
             </h1>
           </div>
           <div className="flex-grow" />

@@ -156,7 +156,7 @@ const HiraganaInput: FC = () => {
 
   return (
     <input
-      className="bg-neutral-900 text-slate-100 p-2 text-lg rounded-md w-full"
+      className="bg-neutral-900 text-slate-100 p-2 text-lg rounded-md w-full outline-none outline-1 focus:outline-neutral-200"
       placeholder={"Enter answer in hiragana"}
       lang="ja"
       maxLength={40}

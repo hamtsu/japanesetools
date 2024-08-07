@@ -218,6 +218,16 @@ const VerbConjugation = () => {
     return () => window.removeEventListener("keydown", handler, false);
   }, [isCorrect, isIncorrect]);
 
+  const closeSettings = () => {
+    // TODO fix postive present form from being allowed
+    if (defaultOptions.present && defaultOptions.affirmative) {
+      console.log("Not allowed");
+    } else {
+      setIsSettingsOpen(false);
+      nextRandomVerb(defaultOptions);
+    }
+  };
+
   return (
     <div className="w-screen h-screen flex">
       <Sidebar currentPage={"Verb-Conjugation"} />
@@ -238,7 +248,7 @@ const VerbConjugation = () => {
         </div>
 
         {/* Content */}
-        <div className="flex flex-col w-full h-full items-center mt-20 gap-20">
+        <div className="flex flex-col w-full h-full items-center mt-5 gap-20">
           {currentVerb && !isSettingsOpen ? (
             <>
               <StreakCounter streak={currentStreak} />
@@ -387,7 +397,7 @@ const VerbConjugation = () => {
 
                 <Button
                   type="secret-error"
-                  onClick={() => setIsSettingsOpen(false)}
+                  onClick={() => closeSettings()}
                   className="h-fit w-fit flex items-center"
                 >
                   <FaXmark size={30} />

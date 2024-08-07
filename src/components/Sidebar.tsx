@@ -114,7 +114,7 @@ const Sidebar: FC<SidebarProps> = ({ currentPage }) => {
         </div>
 
         <div className="flex-grow"/>
-        <div className="opacity-50 text-slate-100 text-sm">made by ethan | github.com/hamtsu</div>
+        <div className="opacity-50 text-slate-100 text-sm">made by ethan ・ github.com/hamtsu</div>
       </div>
 
       <div className={`h-screen ${isSidebarOpen ? 'order-2' : ''} flex items-center bg-transparent text-neutral-500/50 dark:text-slate-300/50`}>
