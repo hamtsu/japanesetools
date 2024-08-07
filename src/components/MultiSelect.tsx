@@ -38,7 +38,7 @@ const MultiSelect: FC<MultiSelectProps> = ({ items, handleToggleItem }) => {
               : ""
           } w-[50%]whitespace-nowrap h-full text-center font-semibold p-2 px-4`}
         >
-          {item.name}
+          {item.name.replace("_", " ")}
         </div>
       ))}
     </div>

@@ -46,6 +46,8 @@ const VerbConjugation = () => {
 
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
 
+  const [badSettings, setBadSettings] = useState<boolean>(false);
+
   const [defaultOptions, setDefaultOptions] = useState<{
     te_form: boolean;
     "う-verbs": boolean;
@@ -147,7 +149,6 @@ const VerbConjugation = () => {
 
     setCurrentVerb(chosenVerb);
     setCurrentConjugationType(randomType);
-    console.log(currentVerb);
   }
 
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
@@ -170,9 +171,20 @@ const VerbConjugation = () => {
     );
 
     options[name] = enabled;
+    
+    if (
+      options.present &&
+      !options.past &&
+      !options.te_form &&
+      !options.negative
+    ) {
+      setBadSettings(true);
+    } else {
+      setBadSettings(false);
 
-    localStorage.setItem("verb-conjugation-options", JSON.stringify(options));
-    setDefaultOptions(options);
+      localStorage.setItem("verb-conjugation-options", JSON.stringify(options));
+      setDefaultOptions(options);
+    }
   };
 
   useEffect(() => {
@@ -219,10 +231,7 @@ const VerbConjugation = () => {
   }, [isCorrect, isIncorrect]);
 
   const closeSettings = () => {
-    // TODO fix postive present form from being allowed
-    if (defaultOptions.present && defaultOptions.affirmative) {
-      console.log("Not allowed");
-    } else {
+    if (!badSettings) {
       setIsSettingsOpen(false);
       nextRandomVerb(defaultOptions);
     }
@@ -402,6 +411,19 @@ const VerbConjugation = () => {
                 >
                   <FaXmark size={30} />
                 </Button>
+
+                {badSettings && (
+                  <div className="rounded-md bg-red-500 text-neutral-200 h-fit px-2 py-1 max-w-[400px]">
+                    <h1 className="font-bold flex items-center gap-1">
+                      <FaExclamationCircle /> Settings Invalid
+                    </h1>
+                    <p className="text-sm">
+                      Verbs of only present tense and affirmative assertion are
+                      invalid. Please select another <b>tense</b> or{" "}
+                      <b>assertion</b>.
+                    </p>
+                  </div>
+                )}
               </div>
 
               <div className="flex gap-3">
@@ -505,7 +527,7 @@ const VerbConjugation = () => {
                   </div>
                   <MultiSelect
                     items={[
-                      { name: "Te-form", defaultOn: defaultOptions.te_form },
+                      { name: "Te_form", defaultOn: defaultOptions.te_form },
                       { name: "Past", defaultOn: defaultOptions.past },
                       { name: "Present", defaultOn: defaultOptions.present },
                     ]}
