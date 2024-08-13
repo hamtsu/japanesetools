@@ -1,6 +1,241 @@
 {
+    "adjectives": [
+        {
+            "kanji": "高い",
+            "hiragana": "たかい",
+            "english": "high, expensive",
+            "type": "い-adjective",
+            "present_negative": "たかくない",
+            "past_affirmative": "たかかった",
+            "past_negative": "たかくなかった"
+        },
+        {
+            "kanji": "新しい",
+            "hiragana": "あたらしい",
+            "english": "new",
+            "type": "い-adjective",
+            "present_negative": "あたらしくない",
+            "past_affirmative": "あたらしかった",
+            "past_negative": "あたらしくなかった"
+        },
+        {
+            "kanji": "良い",
+            "hiragana": "いい",
+            "english": "good",
+            "type": "い-adjective",
+            "present_negative": "よくない",
+            "past_affirmative": "よかった",
+            "past_negative": "よくなかった"
+        },
+        {
+            "kanji": "古い",
+            "hiragana": "ふるい",
+            "english": "old",
+            "type": "い-adjective",
+            "present_negative": "ふるくない",
+            "past_affirmative": "ふるかった",
+            "past_negative": "ふるくなかった"
+        },
+        {
+            "kanji": "大きい",
+            "hiragana": "おおきい",
+            "english": "big",
+            "type": "い-adjective",
+            "present_negative": "おおきくない",
+            "past_affirmative": "おおきかった",
+            "past_negative": "おおきくなかった"
+        },
+        {
+            "kanji": "小さい",
+            "hiragana": "ちいさい",
+            "english": "small",
+            "type": "い-adjective",
+            "present_negative": "ちいさくない",
+            "past_affirmative": "ちいさかった",
+            "past_negative": "ちいさくなかった"
+        },
+        {
+            "kanji": "面白い",
+            "hiragana": "おもしろい",
+            "english": "interesting",
+            "type": "い-adjective",
+            "present_negative": "おもしろくない",
+            "past_affirmative": "おもしろかった",
+            "past_negative": "おもしろくなかった"
+        },
+        {
+            "kanji": "難しい",
+            "hiragana": "むずかしい",
+            "english": "difficult",
+            "type": "い-adjective",
+            "present_negative": "むずかしくない",
+            "past_affirmative": "むずかしかった",
+            "past_negative": "むずかしくなかった"
+        },
+        {
+            "kanji": "易しい",
+            "hiragana": "やさしい",
+            "english": "easy, kind",
+            "type": "い-adjective",
+            "present_negative": "やさしくない",
+            "past_affirmative": "やさしかった",
+            "past_negative": "やさしくなかった"
+        },
+        {
+            "kanji": "楽しい",
+            "hiragana": "たのしい",
+            "english": "fun",
+            "type": "い-adjective",
+            "present_negative": "たのしくない",
+            "past_affirmative": "たのしかった",
+            "past_negative": "たのしくなかった"
+        },
+        {
+            "kanji": "近い",
+            "hiragana": "ちかい",
+            "english": "near",
+            "type": "い-adjective",
+            "present_negative": "ちかくない",
+            "past_affirmative": "ちかかった",
+            "past_negative": "ちかくなかった"
+        },
+        {
+            "kanji": "遠い",
+            "hiragana": "とおい",
+            "english": "far",
+            "type": "い-adjective",
+            "present_negative": "とおくない",
+            "past_affirmative": "とおかった",
+            "past_negative": "とおくなかった"
+        },
+        {
+            "kanji": "重い",
+            "hiragana": "おもい",
+            "english": "heavy",
+            "type": "い-adjective",
+            "present_negative": "おもくない",
+            "past_affirmative": "おもかった",
+            "past_negative": "おもくなかった"
+        },
+        {
+            "kanji": "軽い",
+            "hiragana": "かるい",
+            "english": "light",
+            "type": "い-adjective",
+            "present_negative": "かるくない",
+            "past_affirmative": "かるかった",
+            "past_negative": "かるくなかった"
+        },
+        {
+            "kanji": "速い",
+            "hiragana": "はやい",
+            "english": "fast",
+            "type": "い-adjective",
+            "present_negative": "はやくない",
+            "past_affirmative": "はやかった",
+            "past_negative": "はやくなかった"
+        },
+        {
+            "kanji": "遅い",
+            "hiragana": "おそい",
+            "english": "slow",
+            "type": "い-adjective",
+            "present_negative": "おそくない",
+            "past_affirmative": "おそかった",
+            "past_negative": "おそくなかった"
+        },
+        {
+            "kanji": "広い",
+            "hiragana": "ひろい",
+            "english": "wide, spacious",
+            "type": "い-adjective",
+            "present_negative": "ひろくない",
+            "past_affirmative": "ひろかった",
+            "past_negative": "ひろくなかった"
+        },
+        {
+            "kanji": "狭い",
+            "hiragana": "せまい",
+            "english": "narrow, small",
+            "type": "い-adjective",
+            "present_negative": "せまくない",
+            "past_affirmative": "せまかった",
+            "past_negative": "せまくなかった"
+        },
+        {
+            "kanji": "明るい",
+            "hiragana": "あかるい",
+            "english": "bright",
+            "type": "い-adjective",
+            "present_negative": "あかるくない",
+            "past_affirmative": "あかるかった",
+            "past_negative": "あかるくなかった"
+        },
+        {
+            "kanji": "暗い",
+            "hiragana": "くらい",
+            "english": "dark",
+            "type": "い-adjective",
+            "present_negative": "くらくない",
+            "past_affirmative": "くらかった",
+            "past_negative": "くらくなかった"
+        },
+        {
+            "kanji": "強い",
+            "hiragana": "つよい",
+            "english": "strong",
+            "type": "い-adjective",
+            "present_negative": "つよくない",
+            "past_affirmative": "つよかった",
+            "past_negative": "つよくなかった"
+        },
+        {
+            "kanji": "弱い",
+            "hiragana": "よわい",
+            "english": "weak",
+            "type": "い-adjective",
+            "present_negative": "よわくない",
+            "past_affirmative": "よわかった",
+            "past_negative": "よわくなかった"
+        },
+        {
+            "kanji": "寒い",
+            "hiragana": "さむい",
+            "english": "cold (weather)",
+            "type": "い-adjective",
+            "present_negative": "さむくない",
+            "past_affirmative": "さむかった",
+            "past_negative": "さむくなかった"
+        },
+        {
+            "kanji": "暑い",
+            "hiragana": "あつい",
+            "english": "hot (weather)",
+            "type": "い-adjective",
+            "present_negative": "あつくない",
+            "past_affirmative": "あつかった",
+            "past_negative": "あつくなかった"
+        },
+        {
+            "kanji": "冷たい",
+            "hiragana": "つめたい",
+            "english": "cold (to the touch)",
+            "type": "い-adjective",
+            "present_negative": "つめたくない",
+            "past_affirmative": "つめたかった",
+            "past_negative": "つめたくなかった"
+        },
+        {
+            "kanji": "暖かい",
+            "hiragana": "あたたかい",
+            "english": "warm",
+            "type": "い-adjective",
+            "present_negative": "あたたかくない",
+            "past_affirmative": "あたたかかった",
+            "past_negative": "あたたかくなかった"
+        }
+    ],
     "verbs": [
-        
         {
             "kanji": "食べる",
             "hiragana": "たべる",
