@@ -1,24 +1,14 @@
 import { useEffect, useState } from "react";
 import Sidebar from "../../components/Sidebar";
 import ThemeButton from "../../components/ThemeButton";
-
 import conjugationdata from "../../assets/conjugationdata.json";
 import HiraganaInput from "../../components/HiraganaInput";
-import {
-  FaAngleDown,
-  FaArrowRight,
-  FaCheck,
-  FaCog,
-  FaExclamationCircle,
-  FaFlag,
-} from "react-icons/fa";
-import { FaPersonCircleExclamation, FaXmark } from "react-icons/fa6";
+import { FaArrowRight, FaExclamationCircle } from "react-icons/fa";
+import { FaPersonCircleExclamation } from "react-icons/fa6";
 import Button from "../../components/Button";
 import StreakCounter from "../../components/StreakCounter";
-import Divider from "../../components/Divider";
-import ToggleSwitch from "../../components/ToggleSwitch";
-import MultiSelect from "../../components/MultiSelect";
-import Dropdown from "../../components/Dropdown";
+import VerbCard from "../../components/VerbCard";
+import VerbSettings from "../../components/VerbSettings";
 
 const VerbConjugation = () => {
   const [currentVerb, setCurrentVerb] = useState<{
@@ -35,7 +25,7 @@ const VerbConjugation = () => {
     present_negative_polite: string;
   }>();
   const [currentConjugationType, setCurrentConjugationType] =
-    useState<String>("te_form");
+    useState<string>("te_form");
 
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
   const [isIncorrect, setIsIncorrect] = useState<boolean>(false);
@@ -171,7 +161,7 @@ const VerbConjugation = () => {
     );
 
     options[name] = enabled;
-    
+
     if (
       options.present &&
       !options.past &&
@@ -261,97 +251,14 @@ const VerbConjugation = () => {
           {currentVerb && !isSettingsOpen ? (
             <>
               <StreakCounter streak={currentStreak} />
-              <div className="flex gap-2">
-                {isCorrect ? (
-                  <>
-                    <div className="text-slate-100 bg-green-600 p-3 rounded-md antialiased animate-fade-in">
-                      <h3 className="text-2xl">
-                        <span className="opacity-70">you were</span>{" "}
-                        <b>correct</b>
-                      </h3>
-                      <h1 className="text-8xl font-extrabold ">
-                        {currentVerb[currentConjugationType]}
-                      </h1>
-                    </div>
-
-                    <div className="flex flex-col gap-2 animate-fade-in">
-                      <div className="text-slate-100 bg-green-600 p-3 rounded-md ">
-                        <h4 className="text-2xl">{currentVerb.type}</h4>
-                        <p className="text-1xl font-extrabold ">
-                          {currentConjugationType.replace(/_/g, " ")}
-                        </p>
-                      </div>
-
-                      <div className="text-slate-100 bg-green-600 p-3 rounded-md w-fit">
-                        <FaCheck size="50px" />
-                      </div>
-                    </div>
-                  </>
-                ) : isIncorrect ? (
-                  <>
-                    <div className="text-slate-100 bg-red-600 p-3 rounded-md antialiased animate-fade-in">
-                      <h3 className="text-2xl">
-                        <span className="opacity-70">you were</span>{" "}
-                        <b>incorrect</b>
-                      </h3>
-                      <h1 className="text-8xl font-extrabold ">
-                        {currentVerb[currentConjugationType]}
-                      </h1>
-                    </div>
-
-                    <div className="flex flex-col gap-2 animate-fade-in">
-                      <div className="text-slate-100 bg-red-600 p-3 rounded-md ">
-                        <h4 className="text-2xl">{currentVerb.type}</h4>
-                        <p className="text-1xl font-extrabold ">
-                          {currentConjugationType.replace(/_/g, " ")}
-                        </p>
-                      </div>
-
-                      <div className="text-slate-100 bg-red-600 p-3 rounded-md w-fit">
-                        <FaXmark size="50px" />
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="dark:text-slate-100 bg-slate-200 dark:bg-neutral-800 p-4 rounded-md antialiased animate-fade-in">
-                      <h3 className="text-4xl font-extrabold">
-                        {currentVerb.hiragana}
-                      </h3>
-                      <h1 className="text-9xl font-extrabold ">
-                        {currentVerb.kanji}
-                      </h1>
-                    </div>
-
-                    <div className="flex gap-2 flex-col">
-                      <div className="dark:text-slate-100 bg-slate-200 dark:bg-neutral-800 p-3 rounded-md animate-fade-in h-fit">
-                        <h2 className="text-6xl font-bold">
-                          {currentVerb.english}
-                        </h2>
-                        <p className="opacity-50 mt-2">Conjugate this to</p>
-                        <p className="opacity-100 font-bold">
-                          {currentConjugationType.replace(/_/g, " ")}
-                        </p>
-                      </div>
-                      <div className="dark:text-slate-100 flex gap-1 bg-slate-200 dark:bg-neutral-800 p-1 rounded-md animate-fade-in h-fit">
-                        <Button
-                          type="secret"
-                          className="flex items-center gap-2"
-                          onClick={() => setIsSettingsOpen(!isSettingsOpen)}
-                        >
-                          <FaCog /> settings
-                        </Button>
-                        <Button
-                          type="secret"
-                          className="hover:dark:text-red-500 hover:text-red-500 flex items-center gap-2"
-                        >
-                          <FaFlag /> report issue
-                        </Button>
-                      </div>
-                    </div>
-                  </>
-                )}
-              </div>
+              <VerbCard
+                currentConjugationType={currentConjugationType}
+                currentVerb={currentVerb}
+                isCorrect={isCorrect}
+                isIncorrect={isIncorrect}
+                isSettingsOpen={isSettingsOpen}
+                setIsSettingsOpen={setIsSettingsOpen}
+              />
 
               {isCorrect || isIncorrect ? (
                 <div>
@@ -394,150 +301,12 @@ const VerbConjugation = () => {
               )}
             </>
           ) : isSettingsOpen ? (
-            <div className="flex flex-col gap-3">
-              <div className="flex gap-2">
-                <div className="flex gap-4 items-center w-fit dark:text-slate-100 bg-slate-200 dark:bg-neutral-800 p-4 rounded-md animate-fade-in antialiased">
-                  <FaCog
-                    className="animate-fade-in-late opacity-70"
-                    size={30}
-                  />
-                  <h1 className="text-4xl font-bold">Verb settings</h1>
-                </div>
-
-                <Button
-                  type="secret-error"
-                  onClick={() => closeSettings()}
-                  className="h-fit w-fit flex items-center"
-                >
-                  <FaXmark size={30} />
-                </Button>
-
-                {badSettings && (
-                  <div className="rounded-md bg-red-500 text-neutral-200 h-fit px-2 py-1 max-w-[400px]">
-                    <h1 className="font-bold flex items-center gap-1">
-                      <FaExclamationCircle /> Settings Invalid
-                    </h1>
-                    <p className="text-sm">
-                      Verbs of only present tense and affirmative assertion are
-                      invalid. Please select another <b>tense</b> or{" "}
-                      <b>assertion</b>.
-                    </p>
-                  </div>
-                )}
-              </div>
-
-              <div className="flex gap-3">
-                <div className="flex flex-col gap-2 h-fit dark:text-slate-100 bg-slate-200 dark:bg-neutral-800 p-4 rounded-md animate-fade-in-late antialiased">
-                  <div>
-                    <h3 className="text-2xl font-bold">Presets</h3>
-                    <p className="text-lg opacity-50">
-                      pick a preset of options below
-                    </p>
-                  </div>
-
-                  {/* TODO finish presets */}
-                  <Dropdown
-                    items={[
-                      {
-                        name: "Te-Form only",
-                        callback: () => console.log("test"),
-                      },
-                      {
-                        name: "All but Te-Form",
-                        callback: () => console.log("test"),
-                      },
-                    ]}
-                  >
-                    <Button
-                      type="secondary"
-                      className="flex items-center gap-1"
-                    >
-                      Presets <FaAngleDown />
-                    </Button>
-                  </Dropdown>
-                </div>
-
-                <div className="flex w-96 flex-col gap-2 dark:text-slate-100 bg-slate-200 dark:bg-neutral-800 p-4 rounded-md animate-fade-in-late antialiased">
-                  <div>
-                    <h3 className="text-2xl font-bold">Verb formality</h3>
-                    <p className="text-lg opacity-50">
-                      pick either plain or polite form
-                    </p>
-                  </div>
-                  <ToggleSwitch
-                    onText="Plain"
-                    offText="Polite"
-                    handleToggle={(isOn) => onOptionChange("plain", isOn)}
-                    defaultOn={defaultOptions.plain}
-                  />
-                  <Divider className="my-2" />
-
-                  <div>
-                    <h3 className="text-2xl font-bold">Verb assertion</h3>
-                    <p className="text-lg opacity-50">
-                      pick either affirmative or negative or both
-                    </p>
-                  </div>
-                  <MultiSelect
-                    items={[
-                      {
-                        name: "Affirmative",
-                        defaultOn: defaultOptions.affirmative,
-                      },
-                      { name: "Negative", defaultOn: defaultOptions.negative },
-                    ]}
-                    handleToggleItem={(name, toggle) =>
-                      onOptionChange(name.toLowerCase(), toggle)
-                    }
-                  />
-                  <Divider className="my-2" />
-
-                  <div>
-                    <h3 className="text-2xl font-bold">Verb type</h3>
-                    <p className="text-lg opacity-50">
-                      pick the type of verbs to practice
-                    </p>
-                  </div>
-                  <MultiSelect
-                    items={[
-                      {
-                        name: "う-verbs",
-                        defaultOn: defaultOptions["う-verbs"],
-                      },
-                      {
-                        name: "る-verbs",
-                        defaultOn: defaultOptions["る-verbs"],
-                      },
-                      {
-                        name: "Irregular",
-                        defaultOn: defaultOptions.irregular,
-                      },
-                    ]}
-                    handleToggleItem={(name, toggle) =>
-                      onOptionChange(name.toLowerCase(), toggle)
-                    }
-                  />
-                  <Divider className="my-2" />
-
-                  <div>
-                    <h3 className="text-2xl font-bold">Verb tense</h3>
-                    <p className="text-lg opacity-50">
-                      pick the tense of verbs to practice
-                    </p>
-                  </div>
-                  <MultiSelect
-                    items={[
-                      { name: "Te_form", defaultOn: defaultOptions.te_form },
-                      { name: "Past", defaultOn: defaultOptions.past },
-                      { name: "Present", defaultOn: defaultOptions.present },
-                    ]}
-                    handleToggleItem={(name, toggle) =>
-                      onOptionChange(name.toLowerCase(), toggle)
-                    }
-                  />
-                </div>
-              </div>
-            </div>
+            <VerbSettings
+              badSettings={badSettings}
+              closeSettings={closeSettings}
+              defaultOptions={defaultOptions}
+              onOptionChange={onOptionChange}
+            />
           ) : (
             <div className="dark:text-slate-100 w-96 h-36 mt-36 bg-slate-200 dark:bg-neutral-800 p-4 rounded-md antialiased">
               <FaPersonCircleExclamation

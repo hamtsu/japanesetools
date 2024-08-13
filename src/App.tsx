@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { GlobalContext } from "./context/GlobalContext";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -17,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/kanji" element={<Kanji />} />
+        {/* <Route path="/kanji" element={<Kanji />} /> */}
         <Route path="/conjugation/verb" element={<VerbConjugation />} />
         <Route
           path="/conjugation/adjectives"
