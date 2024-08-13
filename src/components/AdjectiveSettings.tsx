@@ -7,30 +7,32 @@ import ToggleSwitch from "./ToggleSwitch";
 import Divider from "./Divider";
 import MultiSelect from "./MultiSelect";
 
-type VerbSettingsProps = {
-    closeSettings: () => void;
-    badSettings: boolean;
-    onOptionChange: (option: string, value: boolean) => void;
-    defaultOptions: {
-        plain: boolean;
-        affirmative: boolean;
-        negative: boolean;
-        "う-verbs": boolean;
-        "る-verbs": boolean;
-        irregular: boolean;
-        te_form: boolean;
-        past: boolean;
-        present: boolean;
-    };
-}
+type AdjectiveSettingsProps = {
+  closeSettings: () => void;
+  badSettings: boolean;
+  onOptionChange: (option: string, value: boolean) => void;
+  defaultOptions: {
+    "い-adjectives": boolean;
+    "な-adjectives": boolean;
+    past: boolean;
+    present: boolean;
+    negative: boolean;
+    affirmative: boolean;
+  };
+};
 
-const VerbSettings: FC<VerbSettingsProps> = ({ closeSettings, badSettings, onOptionChange, defaultOptions }) => {
+const AdjectiveSettings: FC<AdjectiveSettingsProps> = ({
+  closeSettings,
+  badSettings,
+  onOptionChange,
+  defaultOptions,
+}) => {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex gap-2">
         <div className="flex gap-4 items-center w-fit dark:text-slate-100 bg-slate-200 dark:bg-neutral-800 p-4 rounded-md animate-fade-in antialiased">
           <FaCog className="animate-fade-in-late opacity-70" size={30} />
-          <h1 className="text-4xl font-bold">Verb settings</h1>
+          <h1 className="text-4xl font-bold">Adjective settings</h1>
         </div>
 
         <Button
@@ -47,8 +49,8 @@ const VerbSettings: FC<VerbSettingsProps> = ({ closeSettings, badSettings, onOpt
               <FaExclamationCircle /> Settings Invalid
             </h1>
             <p className="text-sm">
-              Verbs of only present tense and affirmative assertion are invalid.
-              Please select another <b>tense</b> or <b>assertion</b>.
+              Adjectives of only present tense and affirmative assertion are
+              invalid. Please select another <b>tense</b> or <b>assertion</b>.
             </p>
           </div>
         )}
@@ -82,21 +84,7 @@ const VerbSettings: FC<VerbSettingsProps> = ({ closeSettings, badSettings, onOpt
 
         <div className="flex w-96 flex-col gap-2 dark:text-slate-100 bg-slate-200 dark:bg-neutral-800 p-4 rounded-md animate-fade-in-late antialiased">
           <div>
-            <h3 className="text-2xl font-bold">Verb formality</h3>
-            <p className="text-lg opacity-50">
-              pick either plain or polite form
-            </p>
-          </div>
-          <ToggleSwitch
-            onText="Plain"
-            offText="Polite"
-            handleToggle={(isOn) => onOptionChange("plain", isOn)}
-            defaultOn={defaultOptions.plain}
-          />
-          <Divider className="my-2" />
-
-          <div>
-            <h3 className="text-2xl font-bold">Verb assertion</h3>
+            <h3 className="text-2xl font-bold">Adjective assertion</h3>
             <p className="text-lg opacity-50">
               pick either affirmative or negative or both
             </p>
@@ -116,24 +104,20 @@ const VerbSettings: FC<VerbSettingsProps> = ({ closeSettings, badSettings, onOpt
           <Divider className="my-2" />
 
           <div>
-            <h3 className="text-2xl font-bold">Verb type</h3>
+            <h3 className="text-2xl font-bold">Adjective type</h3>
             <p className="text-lg opacity-50">
-              pick the type of verbs to practice
+              pick the type of adjectives to practice
             </p>
           </div>
           <MultiSelect
             items={[
               {
-                name: "う-verbs",
-                defaultOn: defaultOptions["う-verbs"],
+                name: "い-adjectives",
+                defaultOn: defaultOptions["い-adjectives"],
               },
               {
-                name: "る-verbs",
-                defaultOn: defaultOptions["る-verbs"],
-              },
-              {
-                name: "Irregular",
-                defaultOn: defaultOptions.irregular,
+                name: "な-adjectives",
+                defaultOn: defaultOptions["な-adjectives"],
               },
             ]}
             handleToggleItem={(name, toggle) =>
@@ -143,14 +127,13 @@ const VerbSettings: FC<VerbSettingsProps> = ({ closeSettings, badSettings, onOpt
           <Divider className="my-2" />
 
           <div>
-            <h3 className="text-2xl font-bold">Verb tense</h3>
+            <h3 className="text-2xl font-bold">Adjective tense</h3>
             <p className="text-lg opacity-50">
-              pick the tense of verbs to practice
+              pick the tense of adjectives to practice
             </p>
           </div>
           <MultiSelect
             items={[
-              { name: "Te_form", defaultOn: defaultOptions.te_form },
               { name: "Past", defaultOn: defaultOptions.past },
               { name: "Present", defaultOn: defaultOptions.present },
             ]}
@@ -164,4 +147,4 @@ const VerbSettings: FC<VerbSettingsProps> = ({ closeSettings, badSettings, onOpt
   );
 };
 
-export default VerbSettings;
+export default AdjectiveSettings;
