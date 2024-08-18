@@ -79,9 +79,6 @@ const VerbConjugation = () => {
           if (options.past) {
             types.push("past_affirmative_polite");
           }
-          if (options.present) {
-            types.push("present_affirmative_polite");
-          }
         }
 
         if (options.negative) {
@@ -99,9 +96,7 @@ const VerbConjugation = () => {
           if (options.past) {
             types.push("past_affirmative_plain");
           }
-          if (options.present) {
-            types.push("present_affirmative_plain");
-          }
+          
         }
 
         if (options.negative) {
@@ -120,7 +115,7 @@ const VerbConjugation = () => {
 
   function nextRandomVerb(options: typeof defaultOptions) {
     const verbs = conjugationdata.verbs;
-    const randomType = randomConjugationType(options);
+    let randomType = randomConjugationType(options);
     let chosenVerb;
 
     do {
@@ -299,6 +294,10 @@ const VerbConjugation = () => {
                   </div>
                 </div>
               )}
+
+              <div className="rounded-md p-2 bg-neutral-800 text-neutral-200">
+                <h1 className="text-2xl">Verb conjugation guide</h1>
+              </div>
             </>
           ) : isSettingsOpen ? (
             <VerbSettings

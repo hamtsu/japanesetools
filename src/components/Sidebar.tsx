@@ -56,25 +56,14 @@ const Sidebar: FC<SidebarProps> = ({ currentPage }) => {
             Home
           </Button>
 
-          <Button
-            type={currentPage == "About" ? "sidebar-current" : "sidebar"}
-            onClick={() => navigate("/about")}
-            className="flex items-center gap-2 font-bold"
-          >
-            <FaGavel className="text-sm" />
-            About
-          </Button>
-
-          <Divider height={1} />
-
-          <Button
+          {/* <Button
             type={currentPage == "Kanji" ? "sidebar-current" : "sidebar"}
             onClick={() => navigate("/kanji")}
             className="flex items-center gap-2 font-bold"
           >
             <FaMagnifyingGlass className="text-sm" />
             Kanji Lookup
-          </Button>
+          </Button> */}
 
           <Button
             type={currentPage == "Particles" ? "sidebar-current" : "sidebar"}
@@ -114,7 +103,7 @@ const Sidebar: FC<SidebarProps> = ({ currentPage }) => {
         </div>
 
         <div className="flex-grow"/>
-        <div className="opacity-50 text-slate-100 text-sm">made by ethan ・ github.com/hamtsu</div>
+        <div className="opacity-50 text-slate-100 text-sm bg-neutral-950">made by ethan ・ github.com/hamtsu</div>
       </div>
 
       <div className={`h-screen ${isSidebarOpen ? 'order-2' : ''} flex items-center bg-transparent text-neutral-500/50 dark:text-slate-300/50`}>
