@@ -125,8 +125,8 @@ const Button: FC<ButtonProps> = ({ type, children, onClick, disabled, className,
         break;
         case "sidebar-current":
             return (
-                <button onClick={onClick} className={`${className} ${padding ? padding : 'p-2 px-2'} rounded-md text-gray-700 dark:text-slate-100 transition-all border-black dark:border-white
-                dark:hover:bg-slate-200 dark:active:bg-slate-100 hover:text-slate-200 hover:bg-neutral-900 dark:hover:text-neutral-900 active:bg-neutral-950 dark:border-opacity-20 border border-opacity-20 hover:border-opacity-100 hover:dark:border-opacity-60 hover:text-opacity-100 hover:dark:text-opacity-100
+                <button onClick={onClick} className={`${className} ${padding ? padding : 'p-2 px-2'} rounded-md text-gray-700 dark:text-slate-100 transition-all dark:border-white 
+                dark:hover:bg-slate-200 dark:active:bg-slate-100 hover:text-slate-200 hover:bg-neutral-900 dark:hover:text-neutral-900 active:bg-neutral-950 hover:text-opacity-100 hover:dark:text-opacity-100
                     ${disabled ? 'pointer-events-none cursor-not-allowed text-opacity-20 dark:text-opacity-20 bg-green-900' : 'bg-transparent text-opacity-75'} `}
                 >
                     {children}

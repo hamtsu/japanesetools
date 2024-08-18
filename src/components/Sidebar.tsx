@@ -1,10 +1,18 @@
 import { FC, useState } from "react";
 import Chevron from "./Icons/Chevron";
-import { FaMagnifyingGlass } from "react-icons/fa6";
+import {
+  FaCircle,
+  FaGithub,
+  FaHeart,
+  FaLanguage,
+  FaMagnifyingGlass,
+  FaStar,
+} from "react-icons/fa6";
 import {
   FaAngleDown,
   FaAngleUp,
   FaGavel,
+  FaGlobeAsia,
   FaHashtag,
   FaHome,
 } from "react-icons/fa";
@@ -34,14 +42,23 @@ const Sidebar: FC<SidebarProps> = ({ currentPage }) => {
   };
 
   return (
-    <div className={`flex bg-slate-100 dark:bg-neutral-900 ${isSidebarOpen ? "" : "w-0"}`}>
+    <div
+      className={`flex bg-slate-100 dark:bg-neutral-900 ${
+        isSidebarOpen ? "" : "w-0"
+      }`}
+    >
       <div
         className={`${
           isSidebarOpen ? "left-0" : "-left-80"
-        } h-screen sm:flex order-1 relative flex-col bg-slate-200 dark:bg-neutral-850 p-1 transition-all `}
+        } h-screen sm:flex order-1 relative flex-col bg-slate-200 dark:bg-neutral-850 px-3 p-1 transition-all `}
       >
-        <h1 className="mb-7 px-2 text-2xl text-neutral-500 dark:text-slate-300 whitespace-pre-wrap mt-5 bg-slate-100 dark:bg-neutral-900 p-1 rounded-md">
-          <b>Japanese</b> Tools
+        <h1 className="mb-2 px-2 text-2xl dark:text-neutral-200 text-neutral-600 p-1 rounded-md flex items-center gap-4">
+          <div className="min-w-[50px] h-[50px] border border-neutral-500 rounded-md flex items-center text-center">
+            <FaGlobeAsia className="mx-auto" />
+          </div>
+          <div>
+            <b>Japanese</b> Tools
+          </div>
         </h1>
 
         <Divider height={1} />
@@ -50,10 +67,17 @@ const Sidebar: FC<SidebarProps> = ({ currentPage }) => {
           <Button
             type={currentPage == "Home" ? "sidebar-current" : "sidebar"}
             onClick={() => navigate("/")}
-            className="flex items-center gap-2 font-bold"
+            className="flex items-center gap-2"
           >
             <FaHome className="text-sm" />
             Home
+            {currentPage == "Home" && (
+              <>
+                <div className="flex-grow" />
+
+                <div className="h-full w-1 rounded-md bg-neutral-600 dark:bg-white animate-fade-in"></div>
+              </>
+            )}
           </Button>
 
           {/* <Button
@@ -68,45 +92,107 @@ const Sidebar: FC<SidebarProps> = ({ currentPage }) => {
           <Button
             type={currentPage == "Particles" ? "sidebar-current" : "sidebar"}
             onClick={() => navigate("/particles")}
-            className="flex items-center gap-2 font-bold"
+            className="flex items-center gap-2 "
           >
             <b>は</b>
             Particles
+            <div className="bg-yellow-400 px-1 text-neutral-900 font-mono">
+              WIP
+            </div>
+            {currentPage == "Particles" && (
+              <>
+                <div className="flex-grow" />
+
+                <div className="h-full w-1 rounded-md bg-neutral-600 dark:bg-white animate-fade-in"></div>
+              </>
+            )}
           </Button>
 
           <Button
             type={currentPage == "Conjugation" ? "sidebar-current" : "sidebar"}
             onClick={extendConjugation}
-            className="flex items-center gap-2 font-bold"
+            className="flex items-center gap-2"
           >
             <FaHashtag className="text-sm" />
-            Conjugation { isConjugationOpen ? <FaAngleUp /> : <FaAngleDown />}
+            Conjugation {isConjugationOpen ? <FaAngleUp /> : <FaAngleDown />}
           </Button>
 
-            {/* Conjugation section */}
-          <div className={`${isConjugationOpen ? 'flex' : 'hidden' } flex-col gap-1 text-sm ml-3`}>
+          {/* Conjugation section */}
+          <div
+            className={`${
+              isConjugationOpen ? "flex" : "hidden"
+            } flex-col gap-1 text-sm ml-3`}
+          >
             <Button
-              type={currentPage == "Verb-Conjugation" ? "sidebar-current" : "sidebar"}
+              type={
+                currentPage == "Verb-Conjugation"
+                  ? "sidebar-current"
+                  : "sidebar"
+              }
               onClick={() => navigate("/conjugation/verb")}
-              className="flex items-center gap-2 font-bold"
+              className="flex items-center gap-2 "
             >
+              <FaCircle size={12} />
               Verbs
+              <div className="bg-purple-400 px-1 text-neutral-900 font-mono">
+                WIP
+              </div>
+              {currentPage == "Verb-Conjugation" && (
+              <>
+                <div className="flex-grow" />
+
+                <div className="h-full w-1 rounded-md bg-neutral-600 dark:bg-white animate-fade-in"></div>
+              </>
+            )}
             </Button>
             <Button
-              type={currentPage == "Adjective-Conjugation" ? "sidebar-current" : "sidebar"}
+              type={
+                currentPage == "Adjective-Conjugation"
+                  ? "sidebar-current"
+                  : "sidebar"
+              }
               onClick={() => navigate("/conjugation/adjectives")}
-              className="flex items-center gap-2 font-bold"
+              className="flex items-center gap-2 "
             >
+              <FaStar />
               Adjectives
+              <div className="bg-yellow-400 px-1 text-neutral-900 font-mono">
+                WIP
+              </div>
+
+              {currentPage == "Adjective-Conjugation" && (
+              <>
+                <div className="flex-grow" />
+
+                <div className="h-full w-1 rounded-md bg-neutral-600 dark:bg-white animate-fade-in"></div>
+              </>
+            )}
             </Button>
           </div>
         </div>
 
-        <div className="flex-grow"/>
-        <div className="opacity-50 text-slate-100 text-sm bg-neutral-950">made by ethan ・ github.com/hamtsu</div>
+        <div className="flex-grow" />
+        <div className="text-slate-100 w-full p-1 flex gap-2 items-center">
+          <div
+            className="flex gap-1 items-center content-center opacity-50 hover:opacity-100 select-none transition-colors"
+            onClick={() =>
+              window.open("https://github.com/hamtsu/japanesetools", "_blank")
+            }
+          >
+            <FaGithub /> github
+          </div>
+          <span className="text-xs opacity-50 select-none">●</span>
+          <div className="flex gap-1 items-center content-center opacity-50 hover:text-pink-500 hover:opacity-100 select-none">
+            <FaHeart /> donate
+          </div>
+        </div>
       </div>
 
-      <div className={`h-screen ${isSidebarOpen ? 'order-2' : ''} flex items-center bg-transparent text-neutral-500/50 dark:text-slate-300/50`}>
+      <div
+        className={`h-screen ${
+          isSidebarOpen ? "order-2" : ""
+        } flex items-center bg-transparent text-neutral-500/50 dark:text-slate-300/50`}
+      >
         {isSidebarOpen ? (
           <span
             onClick={toggleSidebar}
