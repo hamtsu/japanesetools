@@ -4,14 +4,11 @@ import {
   FaCircle,
   FaGithub,
   FaHeart,
-  FaLanguage,
-  FaMagnifyingGlass,
   FaStar,
 } from "react-icons/fa6";
 import {
   FaAngleDown,
   FaAngleUp,
-  FaGavel,
   FaGlobeAsia,
   FaHashtag,
   FaHome,
@@ -20,6 +17,7 @@ import Button from "./Button";
 
 import { useNavigate } from "react-router-dom";
 import Divider from "./Divider";
+import SidebarAbout from "./SidebarAbout";
 
 type SidebarProps = {
   currentPage: string;
@@ -50,7 +48,7 @@ const Sidebar: FC<SidebarProps> = ({ currentPage }) => {
       <div
         className={`${
           isSidebarOpen ? "left-0" : "-left-80"
-        } h-screen sm:flex order-1 relative flex-col bg-slate-200 dark:bg-neutral-850 px-3 p-1 transition-all `}
+        } h-screen max-w-[300px] sm:flex order-1 relative flex-col bg-slate-200 dark:bg-neutral-850 px-3 p-1 transition-all `}
       >
         <h1 className="mb-2 px-2 text-2xl dark:text-neutral-200 text-neutral-600 p-1 rounded-md flex items-center gap-4">
           <div className="min-w-[50px] h-[50px] border border-neutral-500 rounded-md flex items-center text-center">
@@ -138,12 +136,12 @@ const Sidebar: FC<SidebarProps> = ({ currentPage }) => {
                 WIP
               </div>
               {currentPage == "Verb-Conjugation" && (
-              <>
-                <div className="flex-grow" />
+                <>
+                  <div className="flex-grow" />
 
-                <div className="h-full w-1 rounded-md bg-neutral-600 dark:bg-white animate-fade-in"></div>
-              </>
-            )}
+                  <div className="h-full w-1 rounded-md bg-neutral-600 dark:bg-white animate-fade-in"></div>
+                </>
+              )}
             </Button>
             <Button
               type={
@@ -159,33 +157,20 @@ const Sidebar: FC<SidebarProps> = ({ currentPage }) => {
               <div className="bg-yellow-400 px-1 text-neutral-900 font-mono">
                 WIP
               </div>
-
               {currentPage == "Adjective-Conjugation" && (
-              <>
-                <div className="flex-grow" />
+                <>
+                  <div className="flex-grow" />
 
-                <div className="h-full w-1 rounded-md bg-neutral-600 dark:bg-white animate-fade-in"></div>
-              </>
-            )}
+                  <div className="h-full w-1 rounded-md bg-neutral-600 dark:bg-white animate-fade-in"></div>
+                </>
+              )}
             </Button>
           </div>
         </div>
 
         <div className="flex-grow" />
-        <div className="text-slate-100 w-full p-1 flex gap-2 items-center">
-          <div
-            className="flex gap-1 items-center content-center opacity-50 hover:opacity-100 select-none transition-colors"
-            onClick={() =>
-              window.open("https://github.com/hamtsu/japanesetools", "_blank")
-            }
-          >
-            <FaGithub /> github
-          </div>
-          <span className="text-xs opacity-50 select-none">●</span>
-          <div className="flex gap-1 items-center content-center opacity-50 hover:text-pink-500 hover:opacity-100 select-none">
-            <FaHeart /> donate
-          </div>
-        </div>
+
+        <SidebarAbout />
       </div>
 
       <div
