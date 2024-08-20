@@ -6,7 +6,7 @@ const HiriganaBackground = () => {
     <div
       className="bg-neutral-850 rounded-md p-3 px-14 w-full overflow-clip text-6xl text-neutral-200 font-bold flex items-center animate-fade-in-late"
       style={{
-        backgroundImage: "url('./../../hiragana-bg.svg')", // Path to your image
+        backgroundImage: "url('./../../japanesetools/hiragana-bg.svg')", // Path to your image
         backgroundRepeat: "repeat",
         backgroundSize: "340px 300px",
       }}
