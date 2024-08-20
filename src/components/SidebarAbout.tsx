@@ -38,7 +38,7 @@ const SidebarAbout = () => {
           </div>
           <div className="text-slate-100 w-full p-1 flex gap-2 items-center">
             <div
-              className="flex gap-1 items-center content-center opacity-50 hover:opacity-100 select-none transition-colors"
+              className="flex gap-1 items-center content-center cursor-pointer opacity-50 hover:opacity-100 select-none transition-colors"
               onClick={() =>
                 window.open("https://github.com/hamtsu/japanesetools", "_blank")
               }
@@ -46,7 +46,7 @@ const SidebarAbout = () => {
               <FaGithub /> github
             </div>
             <span className="flex-grow"></span>
-            <div className="flex gap-1 items-center content-center opacity-50 hover:text-pink-500 hover:opacity-100 select-none">
+            <div className="flex gap-1 items-center content-center cursor-pointer opacity-50 hover:text-pink-500 hover:opacity-100 select-none">
               <FaHeart /> donate
             </div>
           </div>

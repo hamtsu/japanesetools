@@ -1,11 +1,6 @@
 import { FC, useState } from "react";
 import Chevron from "./Icons/Chevron";
-import {
-  FaCircle,
-  FaGithub,
-  FaHeart,
-  FaStar,
-} from "react-icons/fa6";
+import { FaCircle, FaStar } from "react-icons/fa6";
 import {
   FaAngleDown,
   FaAngleUp,
