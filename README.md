@@ -1,4 +1,4 @@
-# Japanese Tools (name subject to change)
+# Kunren
 
 Japanese Tools is a **WIP** directory with various useful tools for learning the language.
 

@@ -9,6 +9,7 @@ import Button from "../../components/Button";
 import StreakCounter from "../../components/StreakCounter";
 import VerbCard from "../../components/VerbCard";
 import VerbSettings from "../../components/VerbSettings";
+import VerbConjugationGuide from "../../components/VerbConjugationGuide";
 
 const VerbConjugation = () => {
   const [currentVerb, setCurrentVerb] = useState<{
@@ -96,7 +97,6 @@ const VerbConjugation = () => {
           if (options.past) {
             types.push("past_affirmative_plain");
           }
-          
         }
 
         if (options.negative) {
@@ -294,10 +294,7 @@ const VerbConjugation = () => {
                   </div>
                 </div>
               )}
-
-              <div className="rounded-md p-2 bg-neutral-800 text-neutral-200">
-                <h1 className="text-2xl">Verb conjugation guide</h1>
-              </div>
+              <VerbConjugationGuide conjugationType={currentConjugationType} />
             </>
           ) : isSettingsOpen ? (
             <VerbSettings

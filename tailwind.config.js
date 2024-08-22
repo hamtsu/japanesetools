@@ -34,7 +34,10 @@ export default {
       "animation": {
         "fade-in": "fade-in 0.5s ease-in-out",
         "fade-in-late": "fade-in 1s ease-in-out",
-        "error": "error 0.5s ease-in-out"
+        "error": "error 0.5s ease-in-out",
+        "fade-in-1": "fade-in 0.5s ease-in-out",
+        "fade-in-2": "fade-in 0.5s ease-in-out 0.4s backwards",
+        "fade-in-3": "fade-in 0.5s ease-in-out 0.8s backwards"
       },
       // Keyframes for animation
       "keyframes":{

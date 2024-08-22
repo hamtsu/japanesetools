@@ -1,6 +1,6 @@
 {
-  "homepage": "https://hamtsu.github.io/japanesetools/",
-  "name": "japanese-tools",
+  "homepage": "https://hamtsu.github.io/kunren/",
+  "name": "kunren",
   "private": true,
   "version": "0.0.0",
   "type": "module",

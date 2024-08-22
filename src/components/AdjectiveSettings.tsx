@@ -3,7 +3,6 @@ import { FaCog, FaExclamationCircle } from "react-icons/fa";
 import Button from "./Button";
 import { FaAngleDown, FaXmark } from "react-icons/fa6";
 import Dropdown from "./Dropdown";
-import ToggleSwitch from "./ToggleSwitch";
 import Divider from "./Divider";
 import MultiSelect from "./MultiSelect";
 
