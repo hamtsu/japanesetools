@@ -32,12 +32,14 @@ export default {
         "lines-light": 'repeating-linear-gradient(45deg, rgb(60, 60, 60, var(--tw-bg-opacity)) 0px 8px, transparent 0px 16px)',
       },
       "animation": {
-        "fade-in": "fade-in 0.5s ease-in-out",
+        "fade-in": "fade-in 0.5s ease-in-out both",
+        "fade-out": "fade-in 0.5s ease-in-out reverse",
         "fade-in-late": "fade-in 1s ease-in-out",
         "error": "error 0.5s ease-in-out",
         "fade-in-1": "fade-in 0.5s ease-in-out",
         "fade-in-2": "fade-in 0.5s ease-in-out 0.4s backwards",
-        "fade-in-3": "fade-in 0.5s ease-in-out 0.8s backwards"
+        "fade-in-3": "fade-in 0.5s ease-in-out 0.8s backwards",
+        "scroll": "scroll 5s linear infinite",
       },
       // Keyframes for animation
       "keyframes":{
@@ -48,6 +50,10 @@ export default {
         "error": {
           "0%": { transform: "translateX(5px)", backgroundColor: "rgb(255, 71, 77)", color: "white" },
           "100%": { transform: "translateX(0)" }
+        },
+        "scroll": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" }
         }
       },
     },
