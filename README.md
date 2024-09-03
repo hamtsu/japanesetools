@@ -1,6 +1,6 @@
 # Kunren
 
-Japanese Tools is a **WIP** directory with various useful tools for learning the language.
+Kunren (訓練) is a **WIP** directory with various useful tools for learning the language.
 
 ## Contributing
 
