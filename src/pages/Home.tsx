@@ -31,13 +31,12 @@ const Home = () => {
 
         <div className="flex gap-2 px-3 py-1 flex-nowrap">
           <div className="bg-neutral-200 p-5 rounded-md w-fit animate-fade-in-1">
-            <h1 className="text-8xl text-neutral-850 w-[500px]">
+            <h1 className="text-8xl text-neutral-850 w-[500px] flex flex-col">
               <b>
                 KUNREN
                 <br />
               </b>
-              訓練
-              <FaSquareArrowUpRight className="inline rotate-90" />
+              <span className="w-full flex justify-between">訓練<FaSquareArrowUpRight className="ml-auto inline rotate-90" /></span>
             </h1>
           </div>
 
@@ -46,7 +45,7 @@ const Home = () => {
 
         <div className="bg-slate-200 dark:bg-neutral-800 rounded-md mt-1 p-2 px-4 mx-3 flex text-neutral-800 dark:text-neutral-100 font-bold tracking-wide animate-fade-in-3">
           <div className="flex gap-1 font-normal">
-            <span className="opacity-60">select a concept to below</span>
+            <span className="opacity-60">select a concept to study below</span>
             <div className="px-2 leading-5 rounded-md ml-1 border border-neutral-800 opacity-60 dark:border-neutral-200 ">
               <FaAnglesRight
                 className="inline text-neutral-850 dark:text-neutral-200"

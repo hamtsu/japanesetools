@@ -61,6 +61,8 @@ const VerbConjugation = () => {
     plain: true,
   });
 
+  const [guideShown, setGuideShown] = useState(isIncorrect);
+
   function getRandomInt(min: number, max: number) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -139,6 +141,9 @@ const VerbConjugation = () => {
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     const answer = e.target[0].value;
+
+    if (!answer) return;
+
     setEnteredAnswer(answer);
 
     if (answer === currentVerb?.[currentConjugationType]) {
@@ -147,6 +152,7 @@ const VerbConjugation = () => {
     } else {
       setIsIncorrect(true);
       setCurrentStreak(0);
+      setGuideShown(true);
     }
   };
 
@@ -202,6 +208,10 @@ const VerbConjugation = () => {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Enter" && (isCorrect || isIncorrect)) {
+        if (isIncorrect) {
+          setGuideShown(false);
+        }
+
         e.preventDefault();
         setIsCorrect(false);
         setIsIncorrect(false);
@@ -276,6 +286,9 @@ const VerbConjugation = () => {
                     type="secret-success"
                     className="w-96 font-bold text-lg flex items-center gap-1"
                     onClick={() => {
+                      if (isIncorrect) {
+                        setGuideShown(false);
+                      }
                       setIsCorrect(false);
                       setIsIncorrect(false);
                       nextRandomVerb(defaultOptions);
@@ -294,7 +307,15 @@ const VerbConjugation = () => {
                   </div>
                 </div>
               )}
-              <VerbConjugationGuide conjugationType={currentConjugationType} />
+              <VerbConjugationGuide
+                conjugationType={currentConjugationType}
+                hidden={guideShown}
+                setHidden={setGuideShown}
+                incorrectEnding={
+                  isIncorrect &&
+                  currentVerb.hiragana.slice(-1)
+                }
+              />
             </>
           ) : isSettingsOpen ? (
             <VerbSettings
