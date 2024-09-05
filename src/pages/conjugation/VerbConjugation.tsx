@@ -315,6 +315,9 @@ const VerbConjugation = () => {
                   isIncorrect &&
                   currentVerb.hiragana.slice(-1)
                 }
+                verbType={currentVerb.type}
+                verbBase={currentVerb.hiragana.slice(0, -1)}
+                verbConjugatedEnding={currentVerb[currentConjugationType].replace(currentVerb.hiragana.slice(0, -1), "")}
               />
             </>
           ) : isSettingsOpen ? (

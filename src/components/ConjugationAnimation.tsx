@@ -18,6 +18,7 @@ const ConjugationAnimation: FC<ConjugationAnimationProps> = ({ verbs }) => {
   const changeVerb = (times: number) => {
     const nextIndex = times % verbs.length;
     setCurrentVerb(verbs[nextIndex]);
+    setIsTransformed(false);
   };
 
   useEffect(() => {
@@ -27,8 +28,8 @@ const ConjugationAnimation: FC<ConjugationAnimationProps> = ({ verbs }) => {
       setIsTransformed((prev) => !prev);
       setTransformedTimes((prev) => {
         const newTimes = prev + 1;
-        if (newTimes % 3 === 0) { // change verb every 3 times
-          changeVerb(newTimes / 3);
+        if (newTimes % 4 === 0) { // change verb every 4 times
+          changeVerb(newTimes / 4);
         }
         return newTimes;
       });
@@ -43,7 +44,7 @@ const ConjugationAnimation: FC<ConjugationAnimationProps> = ({ verbs }) => {
         {currentVerb.base}
         <span
           className={`inline-block transition-all duration-500 ${
-            isTransformed ? "animate-fade-in text-green-500" : "text-red-500"
+            isTransformed ? "animate-fade-in text-green-500" : "text-red-500 animate-pulse"
           }`}
         >
           {isTransformed ? currentVerb.secondEnding : currentVerb.firstEnding}
