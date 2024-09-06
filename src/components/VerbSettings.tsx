@@ -59,6 +59,8 @@ const VerbSettings: FC<VerbSettingsProps> = ({ closeSettings, badSettings, onOpt
           <div>
             <h3 className="text-2xl font-bold">Presets</h3>
             <p className="text-lg opacity-50">pick a preset of options below</p>
+
+            <p className="bg-yellow-400 w-fit px-1 text-neutral-900 font-mono">WORK IN PROGRESS</p>
           </div>
 
           {/* TODO finish presets */}

@@ -60,20 +60,13 @@ const AdjectiveSettings: FC<AdjectiveSettingsProps> = ({
           <div>
             <h3 className="text-2xl font-bold">Presets</h3>
             <p className="text-lg opacity-50">pick a preset of options below</p>
+
+            <p className="bg-yellow-400 w-fit px-1 text-neutral-900 font-mono">WORK IN PROGRESS</p>
           </div>
 
           {/* TODO finish presets */}
           <Dropdown
-            items={[
-              {
-                name: "Te-Form only",
-                callback: () => console.log("test"),
-              },
-              {
-                name: "All but Te-Form",
-                callback: () => console.log("test"),
-              },
-            ]}
+            items={[]}
           >
             <Button type="secondary" className="flex items-center gap-1">
               Presets <FaAngleDown />
