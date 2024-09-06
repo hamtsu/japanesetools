@@ -12,7 +12,7 @@ const SidebarAbout = () => {
   return (
     <div
           className={`my-3 rounded-md bg-neutral-900 text-neutral-400 p-3 min-w-[230px] ${
-            toggleAbout ? "h-[225px]" : "h-[72px]"
+            toggleAbout ? "h-[265px]" : "h-[72px]"
           } transition-all`}
         >
           <div onClick={() => setToggleAbout(!toggleAbout)}>
@@ -28,8 +28,7 @@ const SidebarAbout = () => {
           </div>
           <div className={`${toggleAbout ? "" : "hidden"} animate-fade-in`}>
             <p className="text-sm opacity-70 mb-2">
-              I originally made this tool to practice for myself but decided it
-              may be useful for other people to use too.
+              A tool to practice conjugation and other core skills in Japanese. I originally made this for myself to practice conjugation, but I figured it may be useful for others as well.
             </p>
             <p className="text-sm inline-block mb-1">
               This website is open source. please ⭐ the repo if you found it

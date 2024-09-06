@@ -45,12 +45,12 @@ const Sidebar: FC<SidebarProps> = ({ currentPage }) => {
           isSidebarOpen ? "left-0" : "-left-80"
         } h-screen max-w-[300px] sm:flex order-1 relative flex-col bg-slate-200 dark:bg-neutral-850 px-3 p-1 transition-all `}
       >
-        <h1 className="mb-2 px-2 text-2xl dark:text-neutral-200 text-neutral-600 p-1 rounded-md flex items-center gap-4">
-          <div className="min-w-[50px] h-[50px] border border-neutral-500 rounded-md flex items-center text-center">
-            <FaGlobeAsia className="mx-auto" />
+        <h1 className="mb-2 text-2xl dark:text-neutral-200 text-neutral-600 p-1 rounded-md flex items-center gap-3">
+          <div className="min-w-[50px] p-2 h-[50px] border border-neutral-500 rounded-md flex items-center text-center">
+            訓練
           </div>
           <div>
-            <b>Japanese</b> Tools
+            <b>KUNREN</b>
           </div>
         </h1>
 
